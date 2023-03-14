@@ -41,8 +41,16 @@ public class AClassWithDumbTests {
     @Test
     @DisplayName("TimeOut test")
     void testTimeOutAssertion() {
-        assertTimeout(Duration.ofSeconds(2),() -> TimeUnit.SECONDS.sleep(5), "Time test fail. Too long executing.");
+        assertTimeout(Duration.ofSeconds(2),() -> TimeUnit.SECONDS.sleep(10), "Time test fail. Too long executing.");
     }
+
+
+    @Test
+    @DisplayName("TimeOut test")
+    void testTimeOutAssertionPreventive() {
+        assertTimeoutPreemptively(Duration.ofSeconds(5),() -> TimeUnit.SECONDS.sleep(10), "Time test fail. Too long executing.");
+    }
+
 
     @Test
     @DisplayName("Tests all assertions")
