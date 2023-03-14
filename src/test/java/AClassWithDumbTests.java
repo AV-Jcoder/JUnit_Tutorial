@@ -43,4 +43,15 @@ public class AClassWithDumbTests {
     void testTimeOutAssertion() {
         assertTimeout(Duration.ofSeconds(2),() -> TimeUnit.SECONDS.sleep(5), "Time test fail. Too long executing.");
     }
+
+    @Test
+    @DisplayName("Tests all assertions")
+    void testsAllAssertion() {
+        assertAll(
+                () -> assertNotNull(null,"Fail, object is null"),
+                () -> assertNotNull(null,"Fail, object is null"),
+                () -> assertNotNull(null,"Fail, object is null")
+        );
+    }
+
 }
