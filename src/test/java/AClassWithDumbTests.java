@@ -18,7 +18,7 @@ public class AClassWithDumbTests {
     }
 
     @Test
-    @DisplayName("First dumb test.")
+    @DisplayName("Тупой тест.")
     void demoTestMethodI() {
         assertTrue(i < 1, "This message newer will display.");
     }
@@ -30,7 +30,7 @@ public class AClassWithDumbTests {
     }
 
     @Test
-    @DisplayName("Unconditional Error.")
+    @DisplayName("Безусловная ошибка.")
     void testUnconditionalError() {
         fail("This test is newer pass.");
     }
@@ -58,10 +58,18 @@ public class AClassWithDumbTests {
     }
 
     @Test
-    @Disabled
-    @DisplayName("This test is disabled for many reason.")
-    void hiddenTest(){
+    @Disabled("This test is disabled for many reason.")
+    @DisplayName("Not equals test.")
+    void disabledTest(){
         assertNotEquals(1,4);
     }
+
+    @Test
+    @DisplayName("Отключить тест на системе Linux.")
+    void disabledTestWithAssume() {
+        Assumptions.assumeFalse(System.getProperty("os.name").contains("Linux"));
+        assertEquals(4,4,"Test fail, params not equals.");
+    }
+
 
 }
