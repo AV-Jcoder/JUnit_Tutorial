@@ -24,4 +24,14 @@ public class Calculator {
     public int summa(int a, int b) {
         return a + b;
     }
+
+    /**
+     * Деление чисел.
+     * @param a делимое.
+     * @param b делитель.
+     * @return частное.
+     */
+    public int divide(int a, int b) {
+        return a / b;
+    }
 }
