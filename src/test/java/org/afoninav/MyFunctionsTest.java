@@ -32,6 +32,4 @@ public class MyFunctionsTest {
     void computeTriangleNumbers() {
         assertEquals(15,f.triangleNumbers(5),"Incorrect computing triangle numbers.");
     }
-
-
 }

@@ -37,24 +37,6 @@ public class CalculatorTest {
     void testDivideByZero() {
         assertThrows(ArithmeticException.class, () -> calc.divide(1,0),"Fail. Divide by zero throw exactly.");
     }
-
-    @Test
-    @DisplayName("Unconditional Error")
-    void testUnconditionalError() {
-        fail("This test is newer pass.");
-    }
-
-    @Test
-    @DisplayName("TimeOut test")
-    void testTimeOutAssertion() {
-        assertTimeout(Duration.ofSeconds(2),() -> TimeUnit.SECONDS.sleep(5), "Time test fail. Too long executing.");
-    }
-
-
-
-//    @Test
-//    void
-
 }
 
 
