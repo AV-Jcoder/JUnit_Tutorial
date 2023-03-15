@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.DisabledOnOs;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -71,5 +74,17 @@ public class AClassWithDumbTests {
         assertEquals(4,4,"Test fail, params not equals.");
     }
 
+    @Test
+    @DisplayName("Disabled test 3")
+    @DisabledOnOs(OS.LINUX)
+    void disabledTestThree() {
+        assertTrue(1 == 1);
+    }
 
+    @Test
+    @DisplayName("Тест, для ОС Виндовс.")
+    @EnabledOnOs({OS.WINDOWS})
+    void runOnlyWindowsTest() {
+        assertEquals(System.getProperty("os.name"), "Windows");
+    }
 }
