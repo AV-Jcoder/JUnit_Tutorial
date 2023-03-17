@@ -12,6 +12,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <junit.version>5.9.2</junit.version>
+        <junit.engine.ver>5.9.2</junit.engine.ver>
     </properties>
 
     <dependencies>
@@ -20,7 +21,11 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.engine.ver}</version>
+        </dependency>
     </dependencies>
-
 
 </project>

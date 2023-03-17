@@ -21,7 +21,7 @@ public class AClassWithDumbTests {
     }
 
     @Test
-    @DisplayName("Тупой тест.")
+    @DisplayName("First dumb тест.")
     void demoTestMethodI() {
         assertTrue(i < 1, "This message newer will display.");
     }
